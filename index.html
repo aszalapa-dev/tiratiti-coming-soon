@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tiratiti · Très prochainement</title>
+<meta name="description" content="Tiratiti — le vrai tiramisu italien, fait maison. Notre site arrive très prochainement.">
+<meta name="theme-color" content="#FBF5E8">
+
+<!-- Partage réseaux sociaux -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tiratiti · Très prochainement">
+<meta property="og:description" content="Le vrai tiramisu italien, fait maison. Notre site arrive très prochainement.">
+<meta property="og:locale" content="fr_BE">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* Police de marque : si les fichiers Harabara Mais sont présents dans /fonts
+   sur le serveur, ils sont utilisés. Sinon on retombe sur Fredoka (Google Fonts). */
+@font-face{
+  font-family:"Harabara Mais";
+  src:url("fonts/HarabaraMais-Bold.woff2") format("woff2"),
+      url("fonts/HarabaraMais-Bold.woff") format("woff");
+  font-weight:700;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:"Harabara Mais";
+  src:url("fonts/HarabaraMais.woff2") format("woff2"),
+      url("fonts/HarabaraMais.woff") format("woff");
+  font-weight:400;font-style:normal;font-display:swap;
+}
+
+:root{
+  --font-display:"Harabara Mais","Fredoka",sans-serif;
+  --font-body:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --cream:#FBF5E8;   /* fond */
+  /* Encre exacte du logo (échantillonnée sur le PNG) */
+  --ink:#221F20;
+  --brown:#2B1611;   /* brun : texte courant */
+  --accent:#86221C;  /* rouge : touche d accent */
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--ink);
+  /* Petits écrans : rouge uni, la carte peut occuper toute la largeur
+     sans jamais déborder d'une bande de couleur voisine. */
+  background:var(--accent);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:clamp(20px,6vw,64px);
+  text-align:center;
+  -webkit-font-smoothing:antialiased;
+}
+
+.card{
+  width:100%;
+  max-width:640px;
+  min-width:0; /* évite le débordement flex sur petits écrans */
+  animation:rise .9s cubic-bezier(.22,1,.36,1) both;
+}
+
+.logo{
+  width:min(340px,72vw);
+  height:auto;
+  display:block;
+  margin:0 auto clamp(28px,5vw,44px);
+  animation:float 6s ease-in-out infinite;
+}
+
+h1{
+  font-family:var(--font-display);
+  color:var(--cream);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  line-height:1.05;
+  font-size:clamp(24px,7vw,52px);
+  overflow-wrap:break-word;
+  margin:0;
+}
+
+/* Écrans larges : fond divisé en 3 bandes verticales égales (crème /
+   rouge / brun) et carte contrainte à la largeur de la bande rouge
+   centrale, pour que le texte crème ne chevauche jamais la bande crème. */
+@media (min-width:900px){
+  body{
+    background:linear-gradient(
+      to right,
+      var(--cream) 0, var(--cream) calc(100%/3),
+      var(--accent) calc(100%/3), var(--accent) calc(200%/3),
+      var(--brown) calc(200%/3), var(--brown) 100%
+    );
+  }
+  .card{
+    max-width:min(640px,36vw);
+    padding-inline:clamp(10px,1.6vw,24px);
+  }
+  .logo{
+    width:100%;
+    max-width:280px;
+  }
+  h1{
+    font-size:clamp(16px,2.6vw,28px);
+  }
+  /* Chaque mot sur sa ligne : jamais de coupure au milieu d'un mot,
+     quelle que soit la largeur de la bande rouge centrale. */
+  .wrap-word{
+    display:block;
+  }
+}
+
+.rule{
+  width:64px;
+  height:3px;
+  border-radius:3px;
+  background:var(--cream);
+  margin:clamp(20px,4vw,28px) auto;
+}
+
+p{
+  margin:0;
+  font-size:clamp(15px,2.4vw,18px);
+  line-height:1.6;
+  color:var(--cream);
+  opacity:.8;
+  max-width:34ch;
+  margin-inline:auto;
+}
+
+@keyframes rise{
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:none}
+}
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .card,.logo{animation:none}
+}
+</style>
+</head>
+<body>
+
+  <main class="card">
+    <img class="logo" src="logo-full-cream.png" alt="Tiratiti — homemade tiramisu" width="687" height="571">
+
+    <h1>Très <span class="wrap-word">prochainement</span></h1>
+
+    <div class="rule"></div>
+
+    <p>Le vrai tiramisu italien, fait maison.</p>
+
+    <!-- Pour afficher un contact, décommente et remplace par les vraies coordonnées :
+    <p style="margin-top:20px"><a href="mailto:hello@tiratiti.be" style="color:var(--accent);text-decoration:none;font-weight:600">hello@tiratiti.be</a></p>
+    -->
+  </main>
+
+</body>
+</html>
