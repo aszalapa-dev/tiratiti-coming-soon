@@ -12,18 +12,33 @@
   <meta property="og:description" content="Le vrai tiramisu italien, fait maison. On arrive, prépare ta cuillère.">
   <meta property="og:locale" content="fr_BE">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/HarabaraMais-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/HelveticaNeue-Light.woff2" as="font" type="font/woff2" crossorigin>
 
   <style>
+    @font-face {
+      font-family: "Harabara Mais";
+      src: url("fonts/HarabaraMais-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Helvetica Neue";
+      src: url("fonts/HelveticaNeue-Light.woff2") format("woff2");
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root {
       /* Couleurs écran relevées dans l'étiquette Le Classique fournie. */
       --red: #891e20;
       --cream: #f6f3ee;
       --brown: #371712;
       --white: #fff;
-      --font-display: "Fredoka", sans-serif;
+      --font-display: "Harabara Mais", sans-serif;
       --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
@@ -35,6 +50,7 @@
       background: var(--red);
       color: var(--cream);
       font-family: var(--font-body);
+      font-weight: 300;
       -webkit-font-smoothing: antialiased;
     }
 
