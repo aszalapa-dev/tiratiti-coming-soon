@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tiratiti · On arrive</title>
   <meta name="description" content="Tiratiti — le vrai tiramisu italien, fait maison. On arrive, prépare ta cuillère.">
-  <meta name="theme-color" content="#371712">
+  <meta name="theme-color" content="#3a1210">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Tiratiti · On arrive">
@@ -34,9 +34,9 @@
 
     :root {
       /* Couleurs écran relevées dans l'étiquette Le Classique fournie. */
-      --red: #891e20;
+      --label-cream: #e3d3c3;
       --cream: #f6f3ee;
-      --brown: #371712;
+      --brown: #3a1210;
       --white: #fff;
       --font-display: "Inter Tight", sans-serif;
       --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -74,7 +74,7 @@
     }
 
     .wave { fill: var(--white); }
-    .chocolate { fill: var(--red); }
+    .lower-background { fill: var(--label-cream); }
 
     .intro {
       position: relative;
@@ -118,8 +118,8 @@
       left: 50%;
       z-index: 0;
       display: block;
-      width: clamp(300px, 64vh, 700px);
-      width: clamp(300px, 64svh, 700px);
+      width: clamp(300px, 60vh, 700px);
+      width: clamp(300px, 60svh, 700px);
       max-width: none;
       height: auto;
       transform: translate(-50%, 6%);
@@ -155,7 +155,7 @@
   <main class="page">
     <svg class="background" viewBox="0 0 1440 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
       <path class="wave" d="M0 690 C300 860 650 530 950 640 C1150 714 1300 780 1440 700 V1000 H0 Z"/>
-      <path class="chocolate" d="M0 714 C300 884 650 554 950 664 C1150 738 1300 804 1440 724 V1000 H0 Z"/>
+      <path class="lower-background" d="M0 714 C300 884 650 554 950 664 C1150 738 1300 804 1440 724 V1000 H0 Z"/>
     </svg>
 
     <div class="intro">
@@ -164,7 +164,7 @@
       <p>Les premiers points de vente Tiratiti seront annoncés ici. Encore un peu de patience&nbsp;: on prépare notre entrée au rayon frais.</p>
     </div>
 
-    <img class="canette" src="canette-classique.png" alt="Canette de tiramisu Tiratiti Le Classique" width="1150" height="1367" fetchpriority="high" decoding="async">
+    <img class="canette" src="canette-classique.png" alt="Canette de tiramisu Tiratiti Le Classique" width="1151" height="1367" fetchpriority="high" decoding="async">
   </main>
 </body>
 </html>
